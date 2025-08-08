@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="top-header">
+      <div class="header-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+        <span class="chat-title">Chat</span>
+      </div>
+    </div>
+
+    <% chats.forEach(chat => { %>
+      <a href="/chat/<%= chat._id %>" class="chat-link">
+        <strong><%= chat.name %></strong>
+        <small><%= chat.lastMessage %></small>
+      </a>
+    <% }) %>
+  </div>
+  <div class="chat-area">
+    <div class="chat-header">Select a chat</div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
+
+
